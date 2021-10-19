@@ -9,7 +9,7 @@
 
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.0.0' );
+	define( '_S_VERSION', time() );
 }
 
 if ( ! function_exists( 'rybalkanakipre_setup' ) ) :
@@ -140,10 +140,18 @@ add_action( 'widgets_init', 'rybalkanakipre_widgets_init' );
  * Enqueue scripts and styles.
  */
 function rybalkanakipre_scripts() {
+	wp_enqueue_style( 'rybalkanakipre-bootstrap', get_template_directory_uri() . "/assets/css/bootstrap.min.css", array(), _S_VERSION );
+	wp_enqueue_style( 'rybalkanakipre-custom-style', get_template_directory_uri() . "/assets/css/custom-style.css", array(), _S_VERSION );
 	wp_enqueue_style( 'rybalkanakipre-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'rybalkanakipre-style', 'rtl', 'replace' );
 
+    wp_deregister_script( 'jquery' );
+    wp_register_script( 'jquery', get_template_directory_uri() . '/assets/js/jquery-3.5.1.slim.min.js');
+    wp_enqueue_script( 'jquery' );
+
 	wp_enqueue_script( 'rybalkanakipre-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+    wp_enqueue_script( 'rybalkanakipre-bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.bundle.min.js', array('jquery'), '', true);
+    wp_enqueue_script( 'rybalkanakipre-main', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), '', true);
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
