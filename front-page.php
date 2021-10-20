@@ -104,9 +104,9 @@ get_header('front-page');
 
         </section>
     </div>
-    <div class="container" style="height: 70vh;clear: both;">
+    <div class="container">
         <div class="row">
-            <div class="col-9">
+            <div class="col-12 col-lg-9">
                 <?php
                 while ( have_posts() ) :
                     the_post();
@@ -121,7 +121,7 @@ get_header('front-page');
                 endwhile; // End of the loop.
                 ?>
             </div>
-            <div class="col-3">
+            <div class="d-none col-lg-3 d-lg-block d-xl-block">
                 <?php echo get_sidebar(); ?>
             </div>
         </div>

@@ -156,7 +156,6 @@ header .email a:focus{
     float:left;
     width:100%;
     overflow:hidden;
-    height:200px;
 }
 .header_image{
     margin-left: 50%;
@@ -2231,8 +2230,39 @@ td.column-1{
 .welcomestyleoff{
     display:none;
 }
+.navigation.pagination a, .navigation.pagination a:active, .navigation.pagination a:visited {
+    color: #545454;
+}
+.navigation.pagination {
+    clear: both;
+    width: 100%;
+    left: 0;
+    right: 0;
+    background: #E9E9E9;
+    padding: 6px 15px;
+}
 
-
+aside {
+    margin-top: 25px;
+}
+aside section{}
+aside section h2{
+    font-weight: normal;
+    color: #2f56a3;
+}
+aside section ul{
+    list-style: none;
+    margin: 0;
+    margin-left: 10px;
+    padding: 0;
+}
+aside section ul li{}
+aside section ul a, aside section ul a:active, aside section ul a:visited{
+    color: #545454;
+}
+h1, .home_right h3 {
+    color: #2f56a3;
+}
 /***************************** Responsive design *******************/
 
 /***************************** Larger Screens *******************/
@@ -2317,7 +2347,6 @@ td.column-1{
     #content{ width:100%; border:none;}
     #content{ width:100%; border:none;}
     #content img{ max-width:100%; height:auto;}
-    aside{ display:none;}
     h1{ font-size:1.7em;}
     a.enquiry-button{ top:30%;}
     /******** slideshow **************/
