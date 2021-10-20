@@ -50,7 +50,7 @@ if ( ! function_exists( 'rybalkanakipre_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
 			array(
-				'menu-1' => esc_html__( 'Primary', 'rybalkanakipre' ),
+                'header-menu' => esc_html__( 'Header Menu', 'rybalkanakipre' ),
 			)
 		);
 
@@ -185,4 +185,3 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
-

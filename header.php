@@ -23,53 +23,40 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'rybalkanakipre' ); ?></a>
-
-	<header id="masthead" class="site-header container">
-        <div class="row">
-            <div class="col-4">
-                logo
+    <header>
+        <div id="header">
+            <div class="logo">
+                <a href="<?php echo home_url('/'); ?>" title="<?php bloginfo('name'); ?>">
+                    <img src="<?php echo get_template_directory_uri() . '/assets/images/timthumb.png'?>" alt="Information" title="Information">
+                </a>
             </div>
-            <div class="col-4">
-                search
+            <div class="header_right">
+                <ul class="ul_social">
+                </ul>
+                <div class="contact">
+                    <span class="tel">01243 671153 / 07900 086085</span>
+                    <div class="email"><a href="mailto:info@somethingfishyfishingcharters.co.uk">info@somethingfishyfishingcharters.co.uk</a></div>
+                </div><!--contact-->
+                <div class="searchform_main">
+                    <form class="rounded" action="" id="searchform" method="get">
+                        <div><label style="display:none" for="s">Quick Search</label>
+                            <input type="text" id="s" name="s" placeholder="Quick Search..."></div>
+                        <div><input type="submit" value="search" id="searchsubmit"></div>
+                    </form>
+                </div>
             </div>
-            <div class="col-4">
-                contact
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-8 ml-auto">
-                menu
-            </div>
-        </div>
-<!--		<div class="site-branding">-->
-<!--			--><?php
-//			the_custom_logo();
-//			if ( is_front_page() && is_home() ) :
-//				?>
-<!--				<h1 class="site-title"><a href="--><?php //echo esc_url( home_url( '/' ) ); ?><!--" rel="home">--><?php //bloginfo( 'name' ); ?><!--</a></h1>-->
-<!--				--><?php
-//			else :
-//				?>
-<!--				<p class="site-title"><a href="--><?php //echo esc_url( home_url( '/' ) ); ?><!--" rel="home">--><?php //bloginfo( 'name' ); ?><!--</a></p>-->
-<!--				--><?php
-//			endif;
-//			$rybalkanakipre_description = get_bloginfo( 'description', 'display' );
-//			if ( $rybalkanakipre_description || is_customize_preview() ) :
-//				?>
-<!--				<p class="site-description">--><?php //echo $rybalkanakipre_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?><!--</p>-->
-<!--			--><?php //endif; ?>
-<!--		</div>-->
-<!---->
-<!--		<nav id="site-navigation" class="main-navigation">-->
-<!--			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">--><?php //esc_html_e( 'Primary Menu', 'rybalkanakipre' ); ?><!--</button>-->
-<!--			--><?php
-//			wp_nav_menu(
-//				array(
-//					'theme_location' => 'menu-1',
-//					'menu_id'        => 'primary-menu',
-//				)
-//			);
-//			?>
-<!--		</nav>-->
-	</header><!-- #masthead -->
+            <nav>
+                <div id="nav">
+                    <a id="nav2"></a>
+                    <a id="menu-handheld">Menu</a>
+                    <?php wp_nav_menu( [
+                            'theme_location' => 'header-menu',
+                            'container' => 'ul',
+                            'menu_class' => 'round',
+                            'menu_id' => 'fish',
+                        ]
+                    ) ?>
+                </div>
+            </nav>
+        </div><!--header-->
+    </header>
