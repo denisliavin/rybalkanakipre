@@ -12,7 +12,7 @@
  * @package rybalkanakipre
  */
 
-get_header();
+get_header('front-page');
 ?>
     <div id="carouselExampleCaptions" class="carousel slide carousel-fade front-page-carousel" data-ride="false">
                     <ol class="carousel-indicators">

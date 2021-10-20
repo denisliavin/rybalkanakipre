@@ -1366,6 +1366,7 @@ a.testimonial
 }
 .item_image img{
     border:0;
+    max-height: 150px;
 }
 
 

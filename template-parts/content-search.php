@@ -8,28 +8,21 @@
  */
 
 ?>
+<div class="item">
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+    <?php
+        if( has_post_thumbnail() ){
+    ?>
+    <a class="item_image" href="<?php echo get_permalink();?>" title="<?php the_title(); ?>">
+        <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>">
+    </a>
+    <?php
+        }
+    ?>
 
-		<?php if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php
-			rybalkanakipre_posted_on();
-			rybalkanakipre_posted_by();
-			?>
-		</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</header><!-- .entry-header -->
+    <h4 class="item-title"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h4>
+    <p><?php the_excerpt(); ?>
+        <span class="more"><a href="<?php the_permalink(); ?>" title="read more »: <?php the_title(); ?>">read more »</a></span></p>
 
-	<?php rybalkanakipre_post_thumbnail(); ?>
+</div>
 
-	<div class="entry-summary">
-		<?php the_excerpt(); ?>
-	</div><!-- .entry-summary -->
-
-	<footer class="entry-footer">
-		<?php rybalkanakipre_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
-</article><!-- #post-<?php the_ID(); ?> -->
