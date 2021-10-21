@@ -9,32 +9,26 @@
 
 get_header();
 ?>
+    <div id="wrapper">
+        <div class="row">
+            <div class="col-12 col-lg-9">
+                <div id="content">
+            <h1><?php the_title(); ?></h1>
+            <?php
+                if( has_post_thumbnail() ){
+            ?>
 
-	<main id="primary" class="site-main">
-
-		<?php
-		while ( have_posts() ) :
-			the_post();
-
-			get_template_part( 'template-parts/content', get_post_type() );
-
-			the_post_navigation(
-				array(
-					'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'rybalkanakipre' ) . '</span> <span class="nav-title">%title</span>',
-					'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'rybalkanakipre' ) . '</span> <span class="nav-title">%title</span>',
-				)
-			);
-
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
-
-		endwhile; // End of the loop.
-		?>
-
-	</main><!-- #main -->
-
+            <img class="content_image" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>" title="">
+            <?php
+                }
+            ?>
+            <?php the_content(); ?>
+        </div>
+            </div>
+            <div class="d-none col-lg-3 d-lg-block d-xl-block">
+                <?php echo get_sidebar(); ?>
+            </div>
+        </div>
+    </div>
 <?php
-get_sidebar();
 get_footer();

@@ -175,7 +175,9 @@ a.headerbutton2{
     text-transform:uppercase;
     font-size:0.9em;
 }
-
+header .logo a img {
+    width: 350px;
+}
 /********  social Icons *****************/
 .ul_social
 {
@@ -1189,6 +1191,10 @@ a.testimonial
     width: 100%;
     height: 176px;
     background-size: cover!important;
+}
+.archiveImage {
+    width: 360px;
+    height: 180px;
 }
 .child-home .moreinfo{
     font-family:Arial,'Arial Unicode MS',Helvetica,Sans-Serif;
@@ -2427,6 +2433,13 @@ h1, .home_right h3 {
     #footer2 {
         width: 100%;
     }
+    .archiveImage {
+        width: 100%;
+        height: 240px;
+    }
+    .archiveImageA {
+        float: none;
+    }
     #wrapper,.crumb{width:96%; padding:0 2%;}
     #header{ width:98%; padding:0 1%;}
     #content{ width:100%; border:none;}
@@ -2494,7 +2507,7 @@ h1, .home_right h3 {
     nav ul#fish li:hover>ul.children{display: block;}
     nav ul#fish li.page_item_has_children  a{ background:url("../../assets/images/arrow-menu.png") no-repeat right center;}
     nav ul#fish li.page_item_has_children li a,nav ul#fish li.page_item_has_children li li a,nav ul#fish li.page_item_has_children li li li a{ background:none;}
-    nav ul#fish li.page_item_has_children li.page_item_has_children a,nav ul#fish li.page_item_has_children li.page_item_has_children li.page_item_has_children a{background:url("=images/arrow-menu.png") no-repeat right center;}
+    nav ul#fish li.page_item_has_children li.page_item_has_children a,nav ul#fish li.page_item_has_children li.page_item_has_children li.page_item_has_children a, li.menu-item-has-children a{background:url("../../assets/images/arrow-menu.png") no-repeat right center;}
     nav ul#fish li li:first-child a{border-top:1px solid #ccc;}
     nav ul#fish li.page_item_has_children li.page_item_has_children li a,nav ul#fish li.page_item_has_children li.page_item_has_children li li a{ background:none;}
     nav ul#fish ul ul, nav ul#fish ul ul ul, nav ul#fish ul ul ul ul{ margin:0;}
@@ -2523,6 +2536,13 @@ h1, .home_right h3 {
 }
 /***********  iPhone/Smartphones (portrait) ----------- */
 @media only all and (max-width: 559px) and (min-width: 320px){
+    .archiveImage {
+        width: 100%;
+        height: 240px;
+    }
+    .archiveImageA {
+        float: none;
+    }
     .front-page-carousel .slider_text {
         display: none;
     }
@@ -2604,7 +2624,7 @@ h1, .home_right h3 {
     nav ul#fish li:hover>ul.children{display: block;}
     nav ul#fish li.page_item_has_children  a{ background:url("../../assets/images/arrow-menu.png") no-repeat right center;}
     nav ul#fish li.page_item_has_children li a,nav ul#fish li.page_item_has_children li li a,nav ul#fish li.page_item_has_children li li li a{ background:none;}
-    nav ul#fish li.page_item_has_children li.page_item_has_children a,nav ul#fish li.page_item_has_children li.page_item_has_children li.page_item_has_children a{background:url("../../assets/images/arrow-menu.png") no-repeat right center;}
+    nav ul#fish li.page_item_has_children li.page_item_has_children a,nav ul#fish li.page_item_has_children li.page_item_has_children li.page_item_has_children a, li.menu-item-has-children a{background:url("../../assets/images/arrow-menu.png") no-repeat right center;}
     nav ul#fish li li:first-child a{border-top:1px solid #ccc;}
     nav ul#fish li.page_item_has_children li.page_item_has_children li a,nav ul#fish li.page_item_has_children li.page_item_has_children li li a{ background:none;}
     nav ul#fish ul ul, nav ul#fish ul ul ul, nav ul#fish ul ul ul ul{ margin:0;}

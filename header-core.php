@@ -27,14 +27,14 @@
         <div id="header">
             <div class="logo">
                 <a href="<?php echo home_url('/'); ?>" title="<?php bloginfo('name'); ?>">
-                    <img src="<?php echo get_template_directory_uri() . '/assets/images/timthumb.png'?>" alt="Information" title="Information">
+                    <img src="<?php echo get_template_directory_uri() . '/assets/images/logo.jpeg'?>" alt="Information" title="Information">
                 </a>
             </div>
             <div class="header_right">
                 <ul class="ul_social">
                 </ul>
                 <div class="contact">
-                    <span class="tel">01243 671153 / 07900 086085</span>
+                    <span class="tel">01243 671153 / 07900 0860</span>
                     <div class="email"><a href="mailto:info@somethingfishyfishingcharters.co.uk">info@somethingfishyfishingcharters.co.uk</a></div>
                 </div><!--contact-->
                 <div class="searchform_main">

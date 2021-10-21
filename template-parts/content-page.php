@@ -7,46 +7,22 @@
  * @package rybalkanakipre
  */
 
+
+    if( has_post_thumbnail() ){
+        $img_url = get_the_post_thumbnail_url();
+    }else{
+        $img_url = get_template_directory_uri() . '/assets/images/noimage.jpg';
+    }
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-
-	<?php rybalkanakipre_post_thumbnail(); ?>
-
-	<div class="entry-content">
-		<?php
-		the_content();
-
-		wp_link_pages(
-			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'rybalkanakipre' ),
-				'after'  => '</div>',
-			)
-		);
-		?>
-	</div><!-- .entry-content -->
-
-	<?php if ( get_edit_post_link() ) : ?>
-		<footer class="entry-footer">
-			<?php
-			edit_post_link(
-				sprintf(
-					wp_kses(
-						/* translators: %s: Name of current post. Only visible to screen readers */
-						__( 'Edit <span class="screen-reader-text">%s</span>', 'rybalkanakipre' ),
-						array(
-							'span' => array(
-								'class' => array(),
-							),
-						)
-					),
-					wp_kses_post( get_the_title() )
-				),
-				'<span class="edit-link">',
-				'</span>'
-			);
-			?>
-		</footer><!-- .entry-footer -->
-	<?php endif; ?>
-</article><!-- #post-<?php the_ID(); ?> -->
+<div class="child" id="child-row1">
+    <a class="child_image archiveImageA" href="<?php echo get_permalink();?>" title="<?php the_title(); ?>">
+        <div class="archiveImage" style="background: url(<?php echo $img_url; ?>) no-repeat center;"></div>
+    </a>
+    <div class="child-texthome2">
+        <h3>
+            <a href="<?php echo get_permalink();?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+        </h3>
+        <p><?php the_excerpt(); ?><span class="more"><a href="<?php echo get_permalink();?>" title="read more »: <?php the_title(); ?>">read more »</a></span></p>
+    </div>
+</div>
